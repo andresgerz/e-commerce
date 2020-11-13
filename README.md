@@ -1,1 +1,1 @@
-# accounting-app
+# accounting.com
