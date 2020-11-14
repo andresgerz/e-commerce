@@ -18,6 +18,8 @@
   </footer>
   <?php
     echo "Sehr Gut!";
+
+    include("./database/db.php");
   ?>
 </body>
 </html>
