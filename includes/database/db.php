@@ -2,7 +2,7 @@
    
   $db_host="localhost";
   $db_user="root";
-  $db_password="";
+  $db_password="jpFG57J&AI";
   $db_name="accounting_db"; 
 
   $connection=mysqli_connect($db_host,$db_user,$db_password);
