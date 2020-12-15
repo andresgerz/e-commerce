@@ -1,0 +1,15 @@
+{
+    "name": "andres/accounting.com",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "andresgerz",
+            "email": "andres.gerz@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "vlucas/phpdotenv": "4.1.x-dev"
+    }
+}

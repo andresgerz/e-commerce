@@ -1,46 +1,65 @@
 <?php 
-   
-  $db_host="localhost";
-  $db_user="root";
-  $db_password="jpFG57J&AI";
-  $db_name="accounting_db"; 
+  
+  require("vendor/autoload.php"); 
+  
+  
+  $dotenv = Dotenv\Dotenv::createImmutable('./');
+  $dotenv->load();
+  
 
-  $connection=mysqli_connect($db_host,$db_user,$db_password);
+  $db_host=getenv("DDBB_HOST");
+  $db_user=getenv("DDBB_USER");
+  $db_password=getenv("DDBB_PASSWORD");
+  $db_name=getenv("DDBB_NAME"); 
   
-  
-  #catch errors
-  if (mysqli_connect_errno()) {
-    echo "<h3>Connection failed!</h3>";
+
+  try {
     
-    exit();
-  }
-
-
-  mysqli_select_db($connection, $db_name) or die ("Don't found database");
-
-  $query="SELECT * FROM expenses";
+    $connection=new PDO("mysql:host=" . $db_host . "; dbname=" . $db_name, $db_user, $db_password);
   
-  $results=mysqli_query($connection,$query);
+    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  echo "<table class='table table-hover'>
-  <thead>
-    <tr>
-      <th scope='col'>#</th>
-      <th scope='col'>Service</th>
-      <th scope='col'>Cost</th>
-    </tr>
-  </thead>
-  <tbody>";
-      
-  while($row=mysqli_fetch_array($results, MYSQLI_ASSOC)) {
-    echo "<tr><td>";
-    echo $row['expense_id'] . "</td><td>";
-    echo $row['service'] . "</td><td>";
-    echo $row['cost'] . "</td>";
-    echo " </tr>"; 
+    $connection->exec("SET CHARACTER SET utf8");
+
+    $sql="SELECT * FROM expenses";
+
+    $results=$connection->prepare($sql);
+
+    $results->execute();
+
+
+    echo "<table class='table table-hover'>
+    <thead>
+      <tr>
+        <th scope='col'>#</th>
+        <th scope='col'>Service</th>
+        <th scope='col'>Cost</th>
+      </tr>
+    </thead>
+    <tbody>";
+        
+    while($row=$results->fetch(PDO::FETCH_ASSOC)) {
+      echo "<tr><td>";
+      echo $row['expense_id'] . "</td><td>";
+      echo $row['service'] . "</td><td>";
+      echo $row['cost'] . "</td>";
+      echo " </tr>"; 
+    }
+    echo "</tbody></table>";
+
+    echo "Connection OK";
+    
+    $results->closeCursor();
+
+  } catch(Exception $e) {
+    die ('Error: ' . $e->getMessage() );
+  
+  } finally {
+    $connection=null;
+    
   }
-  echo "</tbody></table>";
+   
+  
 
-  mysqli_close($connection);
 
 ?>

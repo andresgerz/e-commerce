@@ -7,12 +7,18 @@
 </head>
 <body>
 <?php 
-        
+      
+      
+  require("vendor/autoload.php"); 
+  
+  
+  $dotenv = Dotenv\Dotenv::createImmutable('./');
+  $dotenv->load();
 
-  $db_host="localhost";
-  $db_user="root";
-  $db_password="jpFG57J&AI";
-  $db_name="accounting_db"; 
+  $db_host=getenv("DDBB_HOST");
+  $db_user=getenv("DDBB_USER");
+  $db_password=getenv("DDBB_PASSWORD");
+  $db_name=getenv("DDBB_NAME"); 
 
   $connection=mysqli_connect($db_host,$db_user,$db_password);
   
