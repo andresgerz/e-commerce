@@ -1,19 +1,9 @@
 <?php 
   
-  require("vendor/autoload.php"); 
   
-  
-  $dotenv = Dotenv\Dotenv::createImmutable('./');
-  $dotenv->load();
   
 
-  $db_host=getenv("DDBB_HOST");
-  $db_user=getenv("DDBB_USER");
-  $db_password=getenv("DDBB_PASSWORD");
-  $db_name=getenv("DDBB_NAME"); 
-  
-
-  try {
+  /* try {
     
     $connection=new PDO("mysql:host=" . $db_host . "; dbname=" . $db_name, $db_user, $db_password);
   
@@ -60,6 +50,6 @@
   }
    
   
-
+ */
 
 ?>
