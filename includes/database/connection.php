@@ -2,25 +2,28 @@
 
   require('config.php');
   
-  class Connection {
+  class Connect {
 
-    protected $connection_db;
 
-    public function Connection() {
+    public static function Connection() {
   
       try {
         
-        $this->connection_db=new PDO('mysql:host=' . DB_HOST . ';dbname=' .DB_NAME, DB_USER, DB_PASSWORD);
-        $this->connection_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $this->connection_db->exec("SET CHARACTER SET utf8");
+        $connection_db=new PDO('mysql:host=' . DB_HOST . ';dbname=' .DB_NAME, DB_USER, DB_PASSWORD);
 
-        return $this->connection_db;
+        $connection_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        $connection_db->exec("SET CHARACTER SET UTF8");
+
+        
       } catch(Exception $e) {
+        die ("Error" . $e->getMessage());
+
         echo "Error line:" . $e->getLine();
       }
       
-      }
+      return $connection_db;
+    }
        
     }
 

@@ -1,8 +1,8 @@
 <?php
 
-  require('connection.php');
-
-  class ShowIt extends Connection {
+/*   require('connection.php');
+ */
+  class ShowIt extends Connect {
    
 
     public function get_services($data = "") {
@@ -24,7 +24,7 @@
 
       } 
 
-      public function showing_services($search) {
+      public function showing_services($search = "") {
 
         $array_services=$this->get_services($search);
         
