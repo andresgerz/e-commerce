@@ -1,0 +1,5 @@
+magento/env
+magento/template
+magento/bin
+magento/Makefile
+magento/rootCA.pem
