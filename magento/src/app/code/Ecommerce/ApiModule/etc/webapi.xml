@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+	<route method="GET" url="/V1/ecommerce-apimodule/:name">
+		<service class="Ecommerce\ApiModule\Api\ApiInterface" method="getPost"/>
+		<resources>
+			<resource ref="anonymous"/>
+		</resources>
+	</route>
+</routes>
