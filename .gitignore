@@ -3,3 +3,56 @@ magento/template
 magento/bin
 magento/Makefile
 magento/rootCA.pem
+
+
+
+# Created by https://www.toptal.com/developers/gitignore/api/wordpress
+# Edit at https://www.toptal.com/developers/gitignore?templates=wordpress
+
+### WordPress ###
+# Core
+#
+# Note: if you want to stage/commit WP core files
+# you can delete this whole section/until Configuration.
+/woo-commerce/wordpress/wp-admin/
+/woo-commerce/wordpress/wp-content/index.php
+/woo-commerce/wordpress/wp-content/languages
+/woo-commerce/wordpress/wp-content/plugins/index.php
+/woo-commerce/wordpress/wp-content/themes/index.php
+/woo-commerce/wordpress/wp-includes/
+/woo-commerce/wordpress/index.php
+/woo-commerce/wordpress/license.txt
+/woo-commerce/wordpress/readme.html
+/woo-commerce/wordpress/wp-*.php
+/woo-commerce/wordpress/xmlrpc.php
+
+# Configuration
+/woo-commerce/wordpress/wp-config.php
+
+# Example themes
+/woo-commerce/wordpress/wp-content/themes/twenty*/
+
+# Example plugin
+/woo-commerce/wordpress/wp-content/plugins/hello.php
+
+# Uploads
+/woo-commerce/wordpress/wp-content/uploads/
+
+# Log files
+*.log
+
+# htaccess
+/woo-commerce/wordpress/.htaccess
+
+# All plugins
+# Note: If you wish to whitelist plugins,
+# uncomment the next line
+#/wp-content/plugins
+
+# All themes
+# Note: If you wish to whitelist themes,
+# uncomment the next line
+#/wp-content/themes
+
+
+# End of https://www.toptal.com/developers/gitignore/api/wordpress

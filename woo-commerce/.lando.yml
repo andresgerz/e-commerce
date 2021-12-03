@@ -1,0 +1,4 @@
+name: woo-commerce
+recipe: wordpress
+config:
+  webroot: wordpress
