@@ -56,3 +56,73 @@ magento/rootCA.pem
 
 
 # End of https://www.toptal.com/developers/gitignore/api/wordpress
+
+
+
+# Created by https://www.toptal.com/developers/gitignore/api/drupal
+# Edit at https://www.toptal.com/developers/gitignore?templates=drupal
+
+### Drupal ###
+# gitignore template for Drupal 8 projects
+#
+# earlier versions of Drupal are tracked in `community/PHP/`
+# follows official upstream conventions:
+# https://www.drupal.org/docs/develop/using-composer
+
+# Ignore configuration files that may contain sensitive information
+drupal-commerce/web/sites/*/*services*.yml
+drupal-commerce/web/sites/*/*settings*.php
+
+# Ignore paths that may contain user-generated content
+drupal-commerce/web/sites/*/files
+drupal-commerce/web/sites/*/public
+drupal-commerce/web/sites/*/private
+drupal-commerce/web/sites/*/files-public
+drupal-commerce/web/sites/*/files-private
+
+# Ignore paths that may contain temporary files
+drupal-commerce/web/sites/*/translations
+drupal-commerce/web/sites/*/tmp
+drupal-commerce/web/sites/*/cache
+
+# Ignore drupal core (if not versioning drupal sources)
+drupal-commerce/web/vendor
+drupal-commerce/web/core
+drupal-commerce/web/modules/README.txt
+drupal-commerce/web/profiles/README.txt
+drupal-commerce/web/sites/development.services.yml
+drupal-commerce/web/sites/example.settings.local.php
+drupal-commerce/web/sites/example.sites.php
+drupal-commerce/web/sites/README.txt
+drupal-commerce/web/themes/README.txt
+drupal-commerce/web/.csslintrc
+drupal-commerce/web/.editorconfig
+drupal-commerce/web/.eslintignore
+drupal-commerce/web/.eslintrc.json
+drupal-commerce/web/.gitattributes
+drupal-commerce/web/.htaccess
+drupal-commerce/web/.ht.router.php
+drupal-commerce/web/autoload.php
+drupal-commerce/web/composer.json
+drupal-commerce/web/composer.lock
+drupal-commerce/web/example.gitignore
+drupal-commerce/web/index.php
+drupal-commerce/web/INSTALL.txt
+drupal-commerce/web/LICENSE.txt
+drupal-commerce/web/README.txt
+drupal-commerce/web/robots.txt
+drupal-commerce/web/update.php
+drupal-commerce/web/web.config
+
+# Ignore vendor dependencies and scripts
+drupal-commerce/vendor
+drupal-commerce/composer.phar
+drupal-commerce/composer
+drupal-commerce/robo.phar
+drupal-commerce/robo
+drupal-commerce/drush.phar
+drupal-commerce/drush
+drupal-commerce/drupal.phar
+drupal-commerce/drupal
+
+# End of https://www.toptal.com/developers/gitignore/api/drupal
