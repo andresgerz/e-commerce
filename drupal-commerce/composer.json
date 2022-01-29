@@ -19,7 +19,10 @@
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-project-message": "^9.3",
         "drupal/core-recommended": "^9.3",
-        "drupal/core-vendor-hardening": "^9.3"
+        "drupal/core-vendor-hardening": "^9.3",
+        "drupal/entity_reference_revisions": "^1.9",
+        "drupal/erd": "^1.0@RC",
+        "drupal/paragraphs": "^1.12"
     },
     "conflict": {
         "drupal/drupal": "*"

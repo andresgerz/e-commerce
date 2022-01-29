@@ -1,0 +1,24 @@
+{
+  "name": "drupal/erd",
+  "type": "drupal-module",
+  "description": "Provides dynamic entity relationship diagrams for all of your Drupal entities.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/erd",
+  "authors": [
+    {
+      "name": "Samuel Mortenson",
+      "homepage": "https://www.drupal.org/u/samuelmortenson",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Contributors",
+      "homepage": "https://www.drupal.org/node/2691091/committers",
+      "role": "Contributors"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/erd",
+    "source": "http://cgit.drupalcode.org/erd"
+  }
+}
