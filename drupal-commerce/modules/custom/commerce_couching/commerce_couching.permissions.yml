@@ -1,0 +1,9 @@
+view commerce couching:
+  title: 'Ver contenido'
+  description: 'El usuario puede ver el contenido relacionado con el módulo'
+access commerce couching:
+  title: 'Acceder a contenido restringido'
+  description: 'El usuario con este permiso podrá ver contenido restringido'
+administer commerce couching:
+  title: 'Administrar el módulo'
+  description: 'Sólo los administradores podrán modificar la configuración del módulo'

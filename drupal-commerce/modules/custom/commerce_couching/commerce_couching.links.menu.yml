@@ -1,0 +1,6 @@
+commerce_couching.form:
+  title: 'Interrupter Banner'
+  description: 'Interrupter Banner settings access'
+  parent: system.admin_structure
+  route_name: commerce_couching.settings
+  weight: 98

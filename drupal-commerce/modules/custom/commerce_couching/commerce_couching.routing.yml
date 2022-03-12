@@ -1,0 +1,7 @@
+commerce_couching.settings:
+  path: '/admin/commerce_couching/settings'
+  defaults:
+    _title: 'Commerce Couching Settings'
+    _form: '\Drupal\commerce_couching\Form\CustomForm'
+  requirements:
+    _permission: 'administer commerce couching'
