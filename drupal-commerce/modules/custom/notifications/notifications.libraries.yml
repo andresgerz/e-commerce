@@ -1,0 +1,6 @@
+form-block:
+    version: 1.x
+    css:
+        theme:
+            css/form_block.css: {}
+            #//add js

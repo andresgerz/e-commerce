@@ -1,0 +1,5 @@
+name: my theme
+type: theme
+description: My first theme
+core_version_requirement: ^8.8 || ^9
+base theme: stable
