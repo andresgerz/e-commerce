@@ -22,9 +22,10 @@ class FormBlock extends BlockBase {
   public function build() {
     $config = $this->getConfiguration();
     $today = date("Y-m-d");
-
+    
     if (!empty($config['from'] <= $today and $config['to'] >= $today)) {
       $notification = $config['notification'];
+      $url_redirect = $config['redirect'];
 
       $block = [
         'notification' => [
@@ -33,8 +34,8 @@ class FormBlock extends BlockBase {
               'notifications/form-block',
             ],
           ],
-         '#prefix' => '<div class="notification"><p>', 
-         '#suffix' => '</p></div>',
+         '#prefix' => '<div class="notification"><a href=' . $url_redirect . '>', 
+         '#suffix' => '</a></div>',
          '#markup' => $this->t('@notification',['@notification' => $notification,]
          ),
         ]
@@ -77,10 +78,16 @@ class FormBlock extends BlockBase {
     #dd($form);
     $form['to'] = [
       '#type' => 'date',
-      '#title' => $this->t('to date'),
+      '#title' => $this->t('To date'),
       '#default_value' => $config["to"],
     ];
 
+    $form['redirect'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('URL to redirect'),
+      '#default_value' => $config["Redirect"],
+      '#description' => $this->t('e.g. /grid-of-products'),
+    ];
  
     return $form;
   }
@@ -93,6 +100,8 @@ class FormBlock extends BlockBase {
 
     $this->configuration['from'] = $form_state->getValue('from');
     $this->configuration['to'] = $form_state->getValue('to');
+    $this->configuration['redirect'] = $form_state->getValue('redirect');
+
   }
 
 }
