@@ -1,11 +1,12 @@
 .notification {
 
-	height: 21px;
 	background-color: #f8d7da;
 	border: 1px solid transparent;
 	border-color: #f5c2c7;
 	border-radius: 0.25rem;
 	color: #842029;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
 	padding: 1rem 1rem;
 	position: relative;
 }

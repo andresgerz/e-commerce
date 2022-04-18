@@ -11,7 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
  * @Block(
  *   id = "form_block",
  *   admin_label = @Translation("Form block"),
- *   category = @Translation("Form World"),
+ *   category = @Translation("Forms"),
  * )
  */
 class FormBlock extends BlockBase {
@@ -66,7 +66,7 @@ class FormBlock extends BlockBase {
     $form['from'] = [
       '#type' => 'date',
       '#title' => $this->t('From date'),
-      '#default_value' => $config["from"],
+      '#default_value' => $config["from"],  
      
     ];
    /*  $form['to'] = [
