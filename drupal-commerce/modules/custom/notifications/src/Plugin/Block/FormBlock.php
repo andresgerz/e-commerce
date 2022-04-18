@@ -21,29 +21,35 @@ class FormBlock extends BlockBase {
    */  
   public function build() {
     $config = $this->getConfiguration();
+    $today = date("Y-m-d");
 
-    if (!empty($config['notification'])) {
+    if (!empty($config['from'] <= $today and $config['to'] >= $today)) {
       $notification = $config['notification'];
+
+      $block = [
+        'notification' => [
+          '#attached' => [
+            'library' => [
+              'notifications/form-block',
+            ],
+          ],
+         '#prefix' => '<div class="notification"><p>', 
+         '#suffix' => '</p></div>',
+         '#markup' => $this->t('@notification',['@notification' => $notification,]
+         ),
+        ]
+      ];
     }
     else {
       $notification = $this->t('');
     }
 
 
-    $block = [
-			'notification' => [
-        '#attached' => [
-          'library' => [
-            'notifications/form-block',
-          ],
-        ],
-			 '#prefix' => '<div class="notification"><p>', 
-			 '#suffix' => '</p></div>',
-			 '#markup' => $this->t('@notification',['@notification' => $notification,]
-       ),
-    ]
-  ];
-    return $block;
+    
+  
+    
+
+      return $block;
   }
 
 
@@ -62,24 +68,19 @@ class FormBlock extends BlockBase {
       '#default_value' => $config['notification'] ?? '',
     ];
     $from = explode("-", $config["from"]);
-    #dd($from);
     $form['from'] = [
       '#type' => 'date',
       '#title' => $this->t('From date'),
-      '#default_value' => $config["from"],  
-     
+      '#default_value' => $config["from"],    
     ];
-   /*  $form['to'] = [
+
+    #dd($form);
+    $form['to'] = [
       '#type' => 'date',
       '#title' => $this->t('to date'),
-      '#default_value' => array(
-        'year' => 2022,
-        'month' => 2,
-        'day' => 15,
-      ),
-
+      '#default_value' => $config["to"],
     ];
- */
+
  
     return $form;
   }
@@ -91,6 +92,7 @@ class FormBlock extends BlockBase {
     $this->configuration['notification'] = $form_state->getValue('notification');
 
     $this->configuration['from'] = $form_state->getValue('from');
+    $this->configuration['to'] = $form_state->getValue('to');
   }
 
 }
